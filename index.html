@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta author="Michal H. Kolář">
+
+	<title>
+        Superpočítač místo zkumavek
+    </title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.mhk.css" id="theme">
+
+</head>
+	<body>
+        <div class="reveal">
+	        <div class="slides">
+<!--
+============ SLIDES START HERE ============
+-->
+
+
+
+<section style="text-align: left">
+    <h1 style="margin-top:1em">
+        Superpočítač místo zkumavek
+    </h1>
+    <h3 style="margin-top: 6em; margin-bottom: 1em">Michal H. Kolář</h3>
+    <h4>Ústav fyzikální chemie, VŠCHT</h4>
+    <h4><a href="https://mhkoscience.github.io/superpocitac" target="_blank">https://mhkoscience.github.io/superpocitac</a></h4>
+</section>
+
+
+<section>
+    <h2>&bdquo;zkumavka&ldquo;</h2>
+    <div class="left3" style="text-align: center">
+    <img src="./media/zkumavky.jpg">
+    <p>
+        <a href="https://www.sks-science.com/lab-supply-p-8586.html" target="_blank" style="font-size: smaller">foto: SKS Science</a>
+    </p>
+    </div>
+
+    <div class="middle3" style="text-align: center">
+    <img src="./media/nmr-bruker2.jpg">
+    <p>
+        <a href="https://www.ntu.edu.sg/nmr/research-capabilities/equipment/details/bruker-avance-iii-hd-800-mhz-%2818.8-t%29-standard-bore-nmr-spectrometer"
+        target="_blank" style="font-size: smaller">foto: NTU Singapur</a>
+    </p>
+    </div>
+
+    <div class="right3" style="text-align: center">
+    <img src="./media/cryo-em-lego.jpg">
+    <p>
+        <a href="https://twitter.com/Intein/status/1505827734215401473" target="_blank" style="font-size:smaller">foto: X of Stefan Rausner</a>
+    </p>
+    </div>
+
+</section>
+
+
+<section data-background-image="./media/lumi.jpg">
+    <p style="margin-top: 19em">
+        foto: Fade Creative <a href="https://www.lumi-supercomputer.eu/media/#fancybox-custom-gallery-1" target="_blank">link</a>
+    </p>
+</section>
+
+
+<section>
+
+    <h2>úkol pro vás (bez kalkulačky)</h2>
+    <h1 style="margin-top:2em">15 : 7 =</h1>
+    <p>
+        (15 děleno 7 na 3 desetinná místa)
+    </p>
+    <h1 class="fragment">2,142857</h1>
+    <h2 class="fragment">
+        operace s plovoucí desetinnou čárkou<br>
+        <span style="color: dodgerblue">floating-point operation</span>
+    </h2>
+</section>
+
+
+<section>
+    <h2>úkol pro vás<h2>
+    <h1 style="margin-top:2em">(rok narození) : (den narození) =</h1>
+    <h1>2004 : 17 =</h1>
+    <h2 style="margin-top:2em" class="fragment">
+        paralelní výpočet<br>
+        <span style="color: dodgerblue">floating-point operation per second (FLOPS)</span>
+    </h2>
+</section>
+
+
+<section data-background-image="./media/nasa-women.jpg">
+    <p style="margin-top: 19em; background-color: rgba(255,255,255,0.5)">
+        foto: NASA / JPL / CALTECH <a href="https://www.nasa.gov/feature/jpl/when-computers-were-human" target="_blank">link</a>
+    </p>
+</section>
+
+<section data-background-image="./media/hidden-figures-poster.jpg" data-background-size="contain">
+</section>
+
+<section data-background-image="./media/oppenheimer-poster.jpg">
+</section>
+
+
+<section>
+    <div class="leftcol" style="width:33%">
+        <img src="./media/john-von-neumann.jpg"><br>
+        <img src="./media/stanislaw-ulam.jpg" style="width:80%">
+    </div>
+    <div class="rightcol" style="text-align: center; width: 63%">
+        <img src="./media/maniac.jpg">
+        MANIAC, 10 kFLOPS
+    </div>
+</section>
+
+
+
+<section>
+    <h3>žebříček TOP500</h3>
+    <img src="./media/top500-time2.png" style="width:70%">
+</section>
+
+
+<section data-background-image="./media/lumi-area.jpg">
+    <p style="margin-top: 19em; background-color: rgba(255,255,255,0.4)">
+        foto: Mikael Kanerva <a href="https://www.lumi-supercomputer.eu/media/#fancybox-custom-gallery-8" target="_blank">link</a>
+    </p>
+</section>
+
+
+<section data-background-image="./media/lumi.jpg">
+    <p style="margin-top: 19em">
+        foto: Fade Creative <a href="https://www.lumi-supercomputer.eu/media/#fancybox-custom-gallery-1" target="_blank">link</a>
+    </p>
+</section>
+
+
+<section>
+    <h3>výpočetní uzel (angl. node)</h3>
+    <img src="./media/lumi-node-g.png">
+</section>
+
+
+<section style="text-align: left">
+    <h3>LUMI-G: 2560 uzlů</h3>
+    <p>
+        1x AMD EPYC 7763 CPU<br>
+        4x AMD MI250x GPU<br>
+        512 GB RAM
+    </p>
+    <h3 style="margin-top: 1em">LUMI-C: 1536 uzlů</h3>
+    <p>
+        2x AMD EPYC 7763 CPU<br>
+        256 &minus; 1024 GB RAM
+    </p>
+
+    <h3 style="margin-top: 1em; color: dodgerblue">3,6 miliardy CZK</h3>
+</section>
+
+
+<section>
+    <h2>&bdquo;zkumavka&ldquo;</h2>
+    <div class="left3" style="text-align: center">
+        <img src="./media/zkumavky.jpg">
+        <h3 style="margin-top: 1em; color: dodgerblue">10 CZK</h3>
+    </div>
+
+    <div class="middle3" style="text-align: center">
+        <img src="./media/nmr-bruker2.jpg">
+        <h3 style="margin-top: 1em; color: dodgerblue">250 milionů CZK</h3>
+    </div>
+
+    <div class="right3" style="text-align: center">
+        <img src="./media/cryo-em-lego.jpg">
+        <h3 style="margin-top: 1em; color: dodgerblue">120 milionů CZK</h3>
+    </div>
+</section>
+
+
+<section data-background-image="./media/karolina.jpg">
+    <p style="margin-top: 19em; background-color: rgba(255,255,255,0.4)">
+        foto: IT4Innovations <a href="https://www.it4i.cz/en/infrastructure/karolina" target="_blank">link</a>
+    </p>
+</section>
+
+<section style="text-align: left">
+    <h3>720 CPU uzlů</h3>
+    <p>
+        2x AMD 7H12, 2,6 GHz, každý 64 jader<br>
+        256 GB RAM (až 24 TB)
+    </p>
+    <h3 style="margin-top:1em">72 GPU uzlů</h3>
+    <p>
+        2x AMD 7763, 2,45 GHz, každý 64 jader<br>
+        8x NVIDIA A100 GPU
+        1 TB RAM
+    </p>
+
+    <h3 style="margin-top: 1em; color: dodgerblue">400 milionů CZK</h3>
+</section>
+
+
+<section>
+    připojení
+</section>
+
+
+<section data-background-image="./media/juqueen.jpg" style="text-align: right;">
+    <div style="background-color: rgba(255,255,255,0.4); margin-top: 15em;">
+        FZ Juelich, Německo<br>
+        2012&minus;2018<br>
+        přes 480000 procesorových jader<br>
+        High-Q Club
+    </div>
+</section>
+
+<section>
+    <h3 style="margin-bottom: 2em">Karolina, IT4Innovations, Ostrava</h3>
+    <div class="leftcol">
+        <img src="./media/karolina-disciplines.png" style="width:70%">
+    </div>
+    <div class="rightcol">
+        <b>64 %</b> materiálové vědy<br>
+        <b>18 %</b> biovědy<br>
+        <b>7 %</b> fyzika a astronomie<br>
+        <b>6 %</b> vědy o Zemi<br>
+        <b>3 %</b> počítačová věda<br>
+        <b>1 %</b> matematika<br>
+        <b>1 %</b> inženýrství<br>
+    </div>
+</section>
+
+<section>
+    <img src="./media/celebrity.png">
+</section>
+
+
+<section>
+    <div class="leftcol" style="width:40%; text-align: center">
+        <h3>Rommie Amaro</h3>
+        <img src="./media/rommie-amaro.jpg" style="width:70%"><br>
+        foto: <a href="https://amarolab.ucsd.edu/php/members/people.php#rommie-amaro">Amaro lab</a>
+        <!--
+          - University of California, San Diego
+        -->
+    </div>
+    
+    <div class="rightcol" style="width:57%">
+        <video width="100%" nocontrols loop style="margin-top: 4em">
+            <source data-src="./media/virus-chripky.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+
+<section>
+    <div class="leftcol" style="width:40%; text-align: center">
+        <h3>Thom H. Dunning, Jr.</h3>
+        <img src="./media/thom-dunning.jpg" style="width:70%"><br>
+        foto: <a href="https://ncsa30.ncsa.illinois.edu/2005/01/dunning-becomes-ncsa-director/">NCSA</a>
+        <!--
+          - University of Washington
+        -->
+    </div>
+    
+    <div class="rightcol" style="width:57%;">
+        <blockquote style="text-align: center; border: solid 2px #bbb; margin-top: 3em">
+        H &Psi; = E &Psi;
+        </blockquote>
+        <p style="text-align: center">
+            Schrödingerova rovnice
+        </p>
+        <div style="display: block; margin: 3em auto; width: 50%" >
+            cc-pVDZ<br>
+            aug-cc-pVTZ<br>
+            cc-pV5Z
+        </div>
+    </div>
+</section>
+
+
+<section data-background-video="./media/video-dens.mp4" data-video-autoplay="true">
+</section>
+
+
+<section>
+    <div class="leftcol" style="width:40%; text-align: center">
+        <h3>David E. Shaw.</h3>
+        <img src="./media/david-shaw.jpg" style="width:70%"><br>
+        foto: <a href="https://relaytx.com/our-team/david-e-shaw-ph-d/">Relay Tx</a>
+        <!--
+          - D E Shaw Research
+        -->
+    </div>
+    
+    <div class="rightcol" style="width:57%;">
+        <p style="margin-top:3em">
+            americký podnikatel, filantrop a vědec
+        </p>
+    </div>
+</section>
+
+
+<section data-background-image="./media/desres.jpg">
+</section>
+
+
+<section data-background-image="./media/anton3.jpg">
+</section>
+
+
+<section>
+    <video width="70%" nocontrols loop>
+        <source data-src="./media/drug-binding.mp4" type="video/mp4">
+    </video>
+</section>
+
+
+<section>
+    <div class="leftcol" style="width:40%; text-align: center">
+        <h3>někdo z publika</h3>
+        <img src="./media/nekdo-z-publika.png" style="width:70%"><br>
+    </div>
+    
+    <div class="rightcol" style="width:57%;">
+        <p style="margin-top:3em">
+            za 20 let: &bdquo;Svou kariéru nastartoval/a na Letní škole VŠCHT před 20 lety.&ldquo;
+        </p>
+    </div>
+</section>
+
+
+<section>
+    <img src="./media/team.jpg">
+    <h3>počítačové simulace syntézy proteinů</h3>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3em">
+        <img src="./media/loga/vscht.png" style="height: 70px; margin-right: 2em">
+        <img src="./media/loga/gacr.png" style="height: 70px; margin-right: 2em">
+        <img src="./media/loga/avh.png" style="height: 70px">
+    </div>
+</section>
+
+
+<section>
+    <img src="./media/translace/translace.png" style="width:70%">
+</section>
+
+
+<section data-background-video="./media/ribosome-intro.mp4"
+         data-background-video-loop="true"
+         data-background-color="white"
+         data-background-size="contain">
+    &nbsp;
+</section>
+
+
+<section data-background-image="./media/slides-overview.png">
+</section>
+
+
+<section style="text-align: left">
+    <h1 style="margin-top:1em">
+        Superpočítač místo zkumavek
+    </h1>
+    <h3 style="margin-top: 6em; margin-bottom: 1em">Michal H. Kolář</h3>
+    <h4>kolarh@vscht.cz</h4>
+    <h4><a href="https://mhkoscience.github.io/superpocitac" target="_blank">https://mhkoscience.github.io/superpocitac</a></h4>
+</section>
+
+<!--
+============ SLIDES END HERE ============
+-->
+            </div>
+        </div>
+
+		<script src="dist/reveal.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                autoPlayMedia: false,
+                controls: false,
+                progress: true, 
+                slideNumber: true,
+                transition: 'none', 
+                backgroundTransition: 'none',
+                center: false,
+			});
+		</script>
+	</body>
+</html>
+        
